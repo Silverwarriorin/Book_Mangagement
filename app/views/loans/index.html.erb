@@ -1,0 +1,31 @@
+<nav>
+  <a href="/menu">Menu</a>
+  <a href="/loans">Loans Table</a>
+  <a href="/catalog">Catalog</a>
+  <a href="/about">About and Credits</a>
+</nav>
+
+<h1 style="text-align: center;"><u>Loans</u></h1>
+
+<button onclick="window.location.href='/loans/new'">New Loan</button>
+<table>
+  <thead>
+    <tr>
+        <th>Student Name</th>
+        <th>Book Name</th>
+        <th>Link to loan</th>
+        <th>Link to book</th>
+    </tr>
+  </thead>
+  <% @loans.each do |loan|%>
+    <%  unless loan.date_in != nil  %>
+    <tr>
+        <th><%= loan.student_name %></th>
+        <th><%= Book.find(loan.book_id).title %></th>
+        <th><%= link_to "Link to loan", loan %></th>
+        <th><%= link_to "Link to book", Book.find(loan.book_id) %></th>
+    </tr>
+      <% end %>
+  <% end %>
+</table>
+

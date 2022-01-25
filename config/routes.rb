@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'error/index'
+  get 'about/index'
   resources :books
   resources :loans
   get 'menu/index'
@@ -21,5 +23,14 @@ Rails.application.routes.draw do
   get '/menu', to: 'menu#index'
   get '/loans', to: 'loans#index'
 
+  get '/books', to: 'books#index'
 
+  get '/about', to: 'about#index'
+
+  # ..
+  get '/auth/auth0/callback', to: 'menu#index'
+  get '/auth/failure', to: 'auth0#failure'
+  get '/auth/logout', to: 'auth0#logout'
+
+  get '/error', to: 'error#index'
 end

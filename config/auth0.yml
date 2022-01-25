@@ -1,0 +1,8 @@
+development:
+  auth0_client_id: yW0CdXQZTClWnWyfdfu3kohYukgaLdYn
+  auth0_client_secret: zcWb15jmFBVkx0VuuLPjkybjdt6i-Su1fYtKHPC9c2kGdgkqh9MPPqty8f4bOXQ0
+  auth0_domain: dev-exc0kplz.us.auth0.com
+test:
+  auth0_client_id: yW0CdXQZTClWnWyfdfu3kohYukgaLdYn
+  auth0_client_secret: zcWb15jmFBVkx0VuuLPjkybjdt6i-Su1fYtKHPC9c2kGdgkqh9MPPqty8f4bOXQ0
+  auth0_domain: dev-exc0kplz.us.auth0.com

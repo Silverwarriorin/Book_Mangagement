@@ -1,14 +1,28 @@
-<p style="color: green"><%= notice %></p>
+<nav>
+  <a href="/menu">Menu</a>
+  <a href="/loans">Loans Table</a>
+  <a href="/books">Catalog</a>
+  <a href="/about">About and Credits</a>
+</nav>
 
-<h1>Books</h1>
+<h1 style="text-align: center"><u>Books</u></h1>
 
-<div id="books">
-  <% @books.each do |book| %>
-    <%= render book %>
-    <p>
-      <%= link_to "Show this book", book %>
-    </p>
+<button onclick="window.location.href='/books/new'">Add book to database</button>
+<table>
+  <thead>
+  <tr>
+    <th>Book Name</th>
+    <th>Author</th>
+    <th>Book Link</th>
+  </tr>
+  </thead>
+  <% @books.each do |book|%>
+
+      <tr>
+        <th><%= book.title %></th>
+        <th><%= book.author %></th>
+        <th><%= link_to "Book Link", book %></th>
+      </tr>
+
   <% end %>
-</div>
-
-<%= link_to "New book", new_book_path %>
+</table>

@@ -1,5 +1,5 @@
 development:
   auth0_client_id: n4eRMiIoFp9lZ1YsswIyieicDySDJRkq
-  auth0_client_secret:
+  auth0_client_secret: 
   auth0_domain:  dev-exc0kplz.us.auth0.com
 

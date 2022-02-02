@@ -130,7 +130,7 @@
 
                   <div class="ml-4">
                     <div class="text-sm font-medium text-gray-900">
-                      <%= book.title %>>
+                      <%= book.title %>
                     </div>
 
                   </div>
@@ -141,15 +141,14 @@
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                  <%= book.genre %>>
+                  <%= book.genre %>
                 </span>
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                 <%= book.isbn %>
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <%= Loan.find_by_book_id(book.id).date_out unless (Loan.find_by_book_id(book.id).date_in = nil)%>
-                <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                <%= Loan.find_by_book_id(book.id).date_out if Loan.where(book_id: book.id).exists? && (Loan.find_by_book_id(book.id).date_in == nil)%>
               </td>
 
               <td class="px-6 py-4 whitespace-nowrap">
@@ -158,8 +157,8 @@
 
               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
 
-                <a href="book" class="text-indigo-600 hover:text-indigo-900">Edit</a>
 
+                <%= link_to "Edit", book %>
               </td>
             </tr>
 

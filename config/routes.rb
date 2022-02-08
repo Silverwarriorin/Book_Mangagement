@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'contact/index'
   get 'error/index'
   get 'about/index'
   resources :books
@@ -34,4 +35,8 @@ Rails.application.routes.draw do
   get '/auth/redirect' => 'auth0#redirect'
 
   get '/error', to: 'error#index'
+
+  get '/contact' => 'contact#index'
+
+  get '/booknew' => 'books#new'
 end
